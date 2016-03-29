@@ -1,11 +1,12 @@
 ﻿using Microsoft.FSharp.Core;
 using Microsoft.FSharp.Reflection;
+using System;
 
 namespace CsharpPortable
 {
     static class Test
     {
-        static FSharpOption<int> TestIt()
+        static Tuple<UnionCaseInfo, object[]> TestIt()
         {
             var option = new FSharpOption<int>(123);
 
