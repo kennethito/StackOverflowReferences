@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpPortable", "CsharpPor
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsharpPortable", "FsharpPortable\FsharpPortable.fsproj", "{27BEFD56-53FE-4784-BD66-F6C9E24D84E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpFull", "CsharpFull\CsharpFull.csproj", "{06579F37-2D09-415B-9CB3-6F52C84E1E22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{27BEFD56-53FE-4784-BD66-F6C9E24D84E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27BEFD56-53FE-4784-BD66-F6C9E24D84E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27BEFD56-53FE-4784-BD66-F6C9E24D84E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06579F37-2D09-415B-9CB3-6F52C84E1E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06579F37-2D09-415B-9CB3-6F52C84E1E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06579F37-2D09-415B-9CB3-6F52C84E1E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06579F37-2D09-415B-9CB3-6F52C84E1E22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
