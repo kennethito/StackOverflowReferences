@@ -13,15 +13,28 @@
 void Main()
 {
 	var pm = new PlotModel();
+	
+	//Start point of the data
+	var startOfDate = DateTime.Now.Subtract(TimeSpan.FromDays(1));
+	
+	//https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx
+	var formatString = "m.ss.fffff";
+	
+	Func<double, string> labelFormatter = 
+		milliseconds => startOfDate.Add(TimeSpan.FromMilliseconds(milliseconds)).ToString(formatString);
 
 	//Use any parsing/transformation/formatting of the input double you'd like
-	pm.Axes.Add(new FuncLinearAxis(AxisPosition.Left, input => $"Custom!: {input}"));
-	pm.Axes.Add(new FuncLinearAxis(AxisPosition.Bottom,	input => Math.Floor(input).ToString()));
+	pm.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = AxisPosition.Left });
+	pm.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = AxisPosition.Bottom, LabelFormatter = labelFormatter });
 								
+	Random random = new Random(Guid.NewGuid().GetHashCode());
+	
+	var datapoints = 
+		Enumerable.Range(1, 100)
+			.Select(milliseconds => new DataPoint(milliseconds, random.Next(0, 10)));
+			
 	var lineSeries = new OxyPlot.Series.LineSeries();
-	lineSeries.Points.Add( new DataPoint (1,1));
-	lineSeries.Points.Add( new DataPoint (2,2));
-	lineSeries.Points.Add( new DataPoint (3,1.5));
+	lineSeries.Points.AddRange(datapoints);
 
 	pm.Series.Add(lineSeries);
 	
