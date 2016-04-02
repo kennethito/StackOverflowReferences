@@ -14,7 +14,7 @@ void Main()
 {
 	var pm = new PlotModel();
 	
-	//Start point of the data
+	//Start point of the data (arbitrary in this example)
 	var startOfData = DateTime.Now.Subtract(TimeSpan.FromDays(1));
 	
 	//https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx
