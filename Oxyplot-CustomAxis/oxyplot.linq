@@ -26,7 +26,6 @@ void Main()
 				.Add(TimeSpan.FromMilliseconds(milliseconds))
 				.ToString(formatString);
 
-	//Use any parsing/transformation/formatting of the input double you'd like
 	pm.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = AxisPosition.Left });
 	pm.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = AxisPosition.Bottom, LabelFormatter = labelFormatter });
 								
@@ -51,20 +50,4 @@ public void Show(PlotModel model, double width = 800, double height = 500)
 	plot.Model = model;
 	w.Content = plot;
 	w.Show();
-}
-
-public class FuncLinearAxis : OxyPlot.Axes.LinearAxis
-{
-	private Func<double, string> formatter = null;
-
-	public FuncLinearAxis(AxisPosition position, Func<double, string> formatter)
-	{
-		this.Position = position;
-		this.formatter = formatter;
-	}
-
-	protected override string FormatValueOverride(double x)
-	{
-		return formatter.Invoke(x);
-	}
 }
